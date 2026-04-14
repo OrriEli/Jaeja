@@ -26,7 +26,7 @@ export default function ShopifyBuyButton() {
         ui.createComponent("product", {
           id: "8549049827520",
           node: document.getElementById(COMPONENT_ID),
-          moneyFormat: "%7B%7Bamount_no_decimals%7D%7D%20kr",
+          moneyFormat: "%E2%82%AC%7B%7Bamount_no_decimals%7D%7D",
           options: {
             product: {
               styles: {
