@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const COMPONENT_ID = "product-component-1776179855779";
+const COMPONENT_ID = "product-component-1776194006685";
 
 export default function ShopifyBuyButton() {
   useEffect(() => {
