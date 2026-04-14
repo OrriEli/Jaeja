@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import PayPalButton from "@/components/PayPalButton";
+import ShopifyBuyButton from "@/components/ShopifyBuyButton";
 
 const SHOPIFY_URL = "https://jaeja.myshopify.com/products/jaeja";
 
@@ -130,7 +130,7 @@ export default function Home() {
       <section id="kaupa" className="py-20 sm:py-28 px-4 bg-sky-50">
         <div className="max-w-3xl mx-auto">
           <AnimateOnScroll>
-            <PayPalButton />
+            <ShopifyBuyButton />
           </AnimateOnScroll>
         </div>
       </section>
