@@ -50,7 +50,7 @@ export default function EmailForm() {
       <div className="bg-white border border-green-200 rounded-3xl p-8 text-center shadow-lg">
         <h3 className="text-xl font-bold text-green-600 mb-2">Takk fyrir!</h3>
         <p className="text-muted">
-          Við höfum samband innan skamms með bankaupplýsingum. Bókin fer í póst um leið og greiðsla berst.
+          Við höfum samband innan skamms
         </p>
       </div>
     );
@@ -124,7 +124,7 @@ export default function EmailForm() {
                    transition-all duration-200 shadow-xl shadow-green-400/30
                    disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
       >
-        {submitting ? "Sendi..." : "Skrá mig"}
+        {submitting ? "Sendi..." : "Panta bók"}
       </button>
 
       <p className="text-xs text-muted text-center">

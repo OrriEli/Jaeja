@@ -38,7 +38,7 @@ export default function Navbar() {
               : "bg-white/90 text-green-600 hover:bg-white shadow-md"
           }`}
         >
-          Skrá mig
+          Panta bók
         </a>
       </div>
     </nav>

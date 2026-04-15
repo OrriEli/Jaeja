@@ -53,7 +53,7 @@ export default function Home() {
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground leading-tight mb-6 animate-fade-in-up delay-100">
-            Gerðu bílferðir{" "}
+            Gerum bílferðir{" "}
             <span className="text-green-400">skemmtilegri</span>
           </h1>
 
@@ -68,7 +68,7 @@ export default function Home() {
                          hover:bg-green-500 hover:scale-105 active:scale-[0.98]
                          transition-all duration-200 shadow-xl shadow-green-400/30"
             >
-              Skrá mig
+              Panta bók
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
               </svg>
@@ -109,8 +109,8 @@ export default function Home() {
               { title: "Samskipti & samvera", desc: "Leikir sem fá fjölskylduna til að tala saman, hlæja og kynnast betur á ferðinni." },
               { title: "Fræðandi & forvitnilegt", desc: "Verkefni sem vekja áhuga á Íslandi og fá börn til að spyrja spurninga og læra á skemmtilegan hátt." },
               { title: "Athugun & umhverfi", desc: "Leikir sem fá börn til að líta út um gluggann, taka eftir og tengjast því sem þau sjá." },
-              { title: "Sköpun & þátttaka", desc: "Pláss fyrir ímyndunaraflið þar sem börn geta teiknað, skrifað og skapað sjálf." },
-              { title: "Endurnýtanleg skemmtun", desc: "Hægt að nota aftur og aftur — fullkomið fyrir hverja einustu bílferð." },
+              { title: "Tússpenni", desc: "Með hverju eintaki fylgir ókeypis tússpenni með innbyggðum töfluhreinsi á lokinu." },
+              { title: "Endurnýtanlegt", desc: "Hægt að nota aftur og aftur, þú bara tússar og strokar eins og þú vilt." },
             ].map((item, i) => (
               <AnimateOnScroll key={i} delay={i * 80}>
                 <div className="bg-sky-50 rounded-3xl p-8 border border-sky-100/40 hover:shadow-lg transition-shadow duration-300 h-full">
@@ -134,7 +134,7 @@ export default function Home() {
                 Skráðu þig og við höfum samband
               </h2>
               <p className="text-muted text-lg leading-relaxed">
-                Við sendum tölvupóst með bankaupplýsingum — bókin fer í póst um leið og greiðsla berst.
+                Við sendum tölvupóst með bankaupplýsingum
               </p>
             </div>
             <EmailForm />
@@ -150,10 +150,10 @@ export default function Home() {
           <AnimateOnScroll>
             <div className="text-center mb-8">
               <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
-                Viltu frekar borga strax með korti eða PayPal?
+                Viltu frekar borga strax með PayPal?
               </h3>
               <p className="text-muted text-sm">
-                Þú getur klárað kaupin hér að neðan.
+                Þegar þú kaupir á netinu verður þú að borga í evrum, það er það eina sem er í boði
               </p>
             </div>
             <ShopifyBuyButton />
@@ -168,14 +168,14 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <AnimateOnScroll>
             <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-8">
-              Saga bókarinnar
+              Saga Jæja
             </h2>
             <div className="space-y-5 text-muted text-lg leading-relaxed">
               <p>
                 Við stofnuðum Jæja af því að okkur fannst foreldrar oft ekki hafa marga heilbrigða valkosti til að gefa börnum sínum í bílferðum. Annað hvort leiðist börnunum alla ferðina, eða þá gefa foreldrar þeim snjalltæki til að drepa tímann, ekki af því að þeim langar það heldur vegna þess að það er ekki margt annað í boði. Okkar markmið er að breyta því.
               </p>
               <p>
-                Við bjuggum til bók sem inniheldur 30 blaðsíður með skemmtilegum leikjum og áhugaverðum fróðleik. Áhersla leikjanna er á að auka samskipti í bílnum, vekja forvitni og áhuga á Íslandi, bæta læsi og málkunnáttu, og fá krakkana til að skemmta sér án snjalltækja. Ásamt leikjunum er fróðleikur um Ísland og mismunandi landshluta þess.
+                Til að ná því markmiði bjuggum við til bók sem inniheldur 30 blaðsíður með skemmtilegum leikjum og áhugaverðum fróðleik. Áhersla leikjanna er á að auka samskipti í bílnum, vekja forvitni og áhuga á Íslandi, bæta læsi og málkunnáttu, og fá krakkana til að skemmta sér án snjalltækja. Ásamt leikjunum er fróðleikur um Ísland og mismunandi landshluta.
               </p>
               <p>
                 Við vonum að þessi bók muni gera sumarið aðeins ánægjulegra.<br />
@@ -201,7 +201,7 @@ export default function Home() {
                          hover:bg-sky-50 hover:scale-105 active:scale-[0.98]
                          transition-all duration-200 shadow-xl shadow-green-800/20"
             >
-              Skrá mig
+              Panta bók
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
               </svg>
