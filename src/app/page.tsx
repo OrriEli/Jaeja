@@ -127,10 +127,10 @@ export default function Home() {
           <AnimateOnScroll>
             <div className="text-center mb-10">
               <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-4">
-                Skráðu þig og við höfum samband
+                Skráðu þig á pöntunarlista
               </h2>
               <p className="text-muted text-lg leading-relaxed">
-                Við sendum tölvupóst með bankaupplýsingum
+                Við höfum samband og klárum kaupin
               </p>
             </div>
             <EmailForm />
