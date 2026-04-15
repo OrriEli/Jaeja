@@ -48,10 +48,6 @@ export default function Home() {
             />
           </div>
 
-          <p className="text-green-500 text-sm font-medium tracking-widest uppercase mb-4 animate-fade-in-up delay-50">
-            Leikjabók fyrir ferðalög
-          </p>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground leading-tight mb-6 animate-fade-in-up delay-100">
             Gerum bílferðir{" "}
             <span className="text-green-400">skemmtilegri</span>
