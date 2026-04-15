@@ -38,7 +38,7 @@ export default function Home() {
 
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           {/* Logo */}
-          <div className="-mb-8 animate-fade-in-up flex flex-col items-center">
+          <div className="mb-6 animate-fade-in-up flex flex-col items-center">
             <Image
               src="/logo.png"
               alt="JÆJA!"
