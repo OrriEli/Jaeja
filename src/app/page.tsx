@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import EmailForm from "@/components/EmailForm";
 import ShopifyBuyButton from "@/components/ShopifyBuyButton";
-
-const SHOPIFY_URL = "https://jaeja.myshopify.com/products/jaeja";
 
 export default function Home() {
   return (
@@ -64,12 +63,12 @@ export default function Home() {
 
           <div className="animate-fade-in-up delay-300">
             <a
-              href="#kaupa"
+              href="#skraning"
               className="inline-flex items-center gap-2 px-8 py-4 bg-green-400 text-white font-bold text-lg rounded-full
                          hover:bg-green-500 hover:scale-105 active:scale-[0.98]
                          transition-all duration-200 shadow-xl shadow-green-400/30"
             >
-              Kaupa bók
+              Skrá mig
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
               </svg>
@@ -125,11 +124,38 @@ export default function Home() {
       </section>
 
       {/* ============================================= */}
-      {/* 5 · BUY                                       */}
+      {/* 5 · SIGNUP (primary)                           */}
       {/* ============================================= */}
-      <section id="kaupa" className="py-20 sm:py-28 px-4 bg-sky-50">
-        <div className="max-w-3xl mx-auto">
+      <section id="skraning" className="py-20 sm:py-28 px-4 bg-sky-50">
+        <div className="max-w-xl mx-auto">
           <AnimateOnScroll>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-4">
+                Skráðu þig og við höfum samband
+              </h2>
+              <p className="text-muted text-lg leading-relaxed">
+                Við sendum tölvupóst með bankaupplýsingum — bókin fer í póst um leið og greiðsla berst.
+              </p>
+            </div>
+            <EmailForm />
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* ============================================= */}
+      {/* 6 · PAYPAL / SHOPIFY (secondary)               */}
+      {/* ============================================= */}
+      <section id="kaupa" className="py-14 sm:py-16 px-4 bg-white border-t border-sky-100">
+        <div className="max-w-2xl mx-auto">
+          <AnimateOnScroll>
+            <div className="text-center mb-8">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                Viltu frekar borga strax með korti eða PayPal?
+              </h3>
+              <p className="text-muted text-sm">
+                Þú getur klárað kaupin hér að neðan.
+              </p>
+            </div>
             <ShopifyBuyButton />
           </AnimateOnScroll>
         </div>
@@ -170,12 +196,12 @@ export default function Home() {
               Tilbúin í ferðalagið?
             </h2>
             <a
-              href="#kaupa"
+              href="#skraning"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-green-600 font-bold text-lg rounded-full
                          hover:bg-sky-50 hover:scale-105 active:scale-[0.98]
                          transition-all duration-200 shadow-xl shadow-green-800/20"
             >
-              Kaupa bók
+              Skrá mig
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
               </svg>

@@ -31,14 +31,14 @@ export default function Navbar() {
           />
         </a>
         <a
-          href="#kaupa"
+          href="#skraning"
           className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
             scrolled
               ? "bg-green-400 text-white hover:bg-green-500 shadow-md shadow-green-400/20"
               : "bg-white/90 text-green-600 hover:bg-white shadow-md"
           }`}
         >
-          Kaupa bók
+          Skrá mig
         </a>
       </div>
     </nav>

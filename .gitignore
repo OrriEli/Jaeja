@@ -42,3 +42,4 @@ next-env.d.ts
 
 # signup data
 signups.json
+/data/signups.json
