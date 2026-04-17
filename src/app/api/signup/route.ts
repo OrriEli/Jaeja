@@ -15,16 +15,26 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, address } = (body ?? {}) as {
+  const { name, email, address, quantity } = (body ?? {}) as {
     name?: unknown;
     email?: unknown;
     address?: unknown;
+    quantity?: unknown;
   };
+
+  const qtyNum =
+    typeof quantity === "number"
+      ? Math.floor(quantity)
+      : typeof quantity === "string"
+        ? parseInt(quantity, 10)
+        : NaN;
 
   if (
     !isNonEmptyString(name) ||
     !isNonEmptyString(email) ||
-    !isNonEmptyString(address)
+    !isNonEmptyString(address) ||
+    !Number.isFinite(qtyNum) ||
+    qtyNum < 1
   ) {
     return Response.json(
       { ok: false, error: "Vinsamlegast fylltu út alla reiti." },
@@ -52,13 +62,14 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "JÆJA! Skráning <onboarding@resend.dev>",
       to: toEmail,
-      subject: `Ný skráning: ${name.trim()}`,
+      subject: `Ný skráning: ${name.trim()} (${qtyNum} eintök)`,
       html: `
         <h2>Ný skráning á JÆJA!</h2>
         <table style="border-collapse:collapse;font-family:sans-serif;font-size:15px;">
           <tr><td style="padding:6px 16px 6px 0;font-weight:bold;">Nafn</td><td>${name.trim()}</td></tr>
           <tr><td style="padding:6px 16px 6px 0;font-weight:bold;">Netfang</td><td>${email.trim()}</td></tr>
           <tr><td style="padding:6px 16px 6px 0;font-weight:bold;">Heimilisfang</td><td>${address.trim()}</td></tr>
+          <tr><td style="padding:6px 16px 6px 0;font-weight:bold;">Fjöldi eintaka</td><td>${qtyNum}</td></tr>
           <tr><td style="padding:6px 16px 6px 0;font-weight:bold;">Tími</td><td>${createdAt}</td></tr>
         </table>
       `,

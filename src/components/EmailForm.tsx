@@ -8,6 +8,7 @@ export default function EmailForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [quantity, setQuantity] = useState("1");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -15,7 +16,8 @@ export default function EmailForm() {
     e.preventDefault();
     setErrorMsg("");
 
-    if (!name.trim() || !email.trim() || !address.trim()) {
+    const qtyNum = parseInt(quantity, 10);
+    if (!name.trim() || !email.trim() || !address.trim() || !qtyNum || qtyNum < 1) {
       setStatus("error");
       setErrorMsg("Vinsamlegast fylltu út alla reiti.");
       return;
@@ -26,7 +28,7 @@ export default function EmailForm() {
       const res = await fetch("/api/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, address }),
+        body: JSON.stringify({ name, email, address, quantity: qtyNum }),
       });
       const data = (await res.json().catch(() => ({}))) as {
         ok?: boolean;
@@ -39,6 +41,7 @@ export default function EmailForm() {
       setName("");
       setEmail("");
       setAddress("");
+      setQuantity("1");
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Eitthvað fór úrskeiðis.");
@@ -108,6 +111,24 @@ export default function EmailForm() {
           onChange={(e) => setAddress(e.target.value)}
           disabled={submitting}
           placeholder="Gata, húsnúmer, póstnúmer, staður"
+          className="w-full px-4 py-3 rounded-xl border border-sky-200 bg-sky-50/40 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition disabled:opacity-60"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="quantity" className="block text-sm font-semibold text-foreground mb-1">
+          Hvað viltu mörg eintök?
+        </label>
+        <input
+          id="quantity"
+          name="quantity"
+          type="number"
+          min={1}
+          step={1}
+          inputMode="numeric"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+          disabled={submitting}
           className="w-full px-4 py-3 rounded-xl border border-sky-200 bg-sky-50/40 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition disabled:opacity-60"
         />
       </div>
