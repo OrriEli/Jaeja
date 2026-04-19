@@ -5,6 +5,13 @@ function isNonEmptyString(v: unknown): v is string {
 }
 
 export async function POST(request: Request) {
+  if (process.env.SITE_CLOSED === "true") {
+    return Response.json(
+      { ok: false, error: "Skráning er lokuð." },
+      { status: 503 },
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();

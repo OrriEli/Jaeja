@@ -3,8 +3,13 @@ import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import EmailForm from "@/components/EmailForm";
 import ShopifyBuyButton from "@/components/ShopifyBuyButton";
+import SoldOut from "@/components/SoldOut";
 
 export default function Home() {
+  if (process.env.SITE_CLOSED === "true") {
+    return <SoldOut />;
+  }
+
   return (
     <main className="relative overflow-hidden">
       <Navbar />
