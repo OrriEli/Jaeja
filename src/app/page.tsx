@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import EmailForm from "@/components/EmailForm";
-import ShopifyBuyButton from "@/components/ShopifyBuyButton";
 import SoldOut from "@/components/SoldOut";
 
 export default function Home() {
@@ -139,25 +138,6 @@ export default function Home() {
               </p>
             </div>
             <EmailForm />
-          </AnimateOnScroll>
-        </div>
-      </section>
-
-      {/* ============================================= */}
-      {/* 6 · PAYPAL / SHOPIFY (secondary)               */}
-      {/* ============================================= */}
-      <section id="kaupa" className="py-14 sm:py-16 px-4 bg-white border-t border-sky-100">
-        <div className="max-w-2xl mx-auto">
-          <AnimateOnScroll>
-            <div className="text-center mb-8">
-              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
-                Viltu frekar borga strax með PayPal?
-              </h3>
-              <p className="text-muted text-sm">
-                Þegar þú kaupir á netinu verður þú að borga í evrum, það er það eina sem er í boði
-              </p>
-            </div>
-            <ShopifyBuyButton />
           </AnimateOnScroll>
         </div>
       </section>
